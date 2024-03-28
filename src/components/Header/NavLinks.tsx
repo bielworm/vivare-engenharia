@@ -1,24 +1,42 @@
 'use client'
 import Link from 'next/link'
-import Icon from '../Adapters/Icon'
+import { Icon as Iconify, IconProps } from '@iconify/react'
 import { useSelectedLayoutSegment } from 'next/navigation'
+import { DropdownHover } from './DropdownHover'
 
 export const navLinks = [
   {
     route: '/',
-    name: 'Home',
+    name: 'Início',
   },
   {
-    route: '/sobre-nos',
-    name: 'Sobre Nós',
+    name: 'Empreendimentos',
+    subroutes: [
+      {
+        label: 'Rio de Janeiro',
+        route: '/imovel/rio-de-janeiro'
+      },
+      {
+        label: 'Jardins de Vivara',
+        route: '/imovel/jardins-de-vivara'
+      },
+      {
+        label: 'Reserva Bolonha',
+        route: '/imovel/reserva-bolonha'
+      },
+      {
+        label: 'Vivare Garden',
+        route: '/imovel/vivare-garden'
+      },
+    ]
   },
   {
-    route: '/blog',
-    name: 'Blog',
+    route: '/#sobre-nos',
+    name: 'A Vivare ',
   },
   {
-    route: '/contatos',
-    name: 'Contatos',
+    route: '/#contato',
+    name: 'Contato',
   },
 ]
 
@@ -27,16 +45,23 @@ export default function NavLinks() {
 
   return (
     <>
-      {navLinks?.map((link) => (
-        <Link key={link.name} href={link.route}>
-          <span className={`${segment === link.route.replace("/", "") ? "font-bold" : "font-normal"} hover:opacity-70 text-white cursor-pointer`}>{link.name}</span>
-        </Link>
+      {navLinks.map((link) => (
+        link.subroutes ? (
+          <DropdownHover key={link.name} title={link.name} links={link.subroutes} />
+        ) : (
+          <Link key={link.name} href={link.route}>
+            <span className="text-[#545454] text-base hover:text-[#99161d] cursor-pointer">{link.name}</span>
+          </Link>
+        )
       ))}
-      <a href="/" rel="noreferrer" target="_blank">
-        <Icon icon="mdi:facebook" className="text-white" />
+      <a href="https://web.facebook.com/vivare.engenharia/" rel="noreferrer" target="_blank">
+        <Iconify icon="mdi:facebook" width={24} height={24} className="text-[#99161D] hover:text-[#54595F] transition-all duration-300 hover:-translate-y-2" />
       </a>
-      <a href="/" rel="noreferrer" target="_blank">
-        <Icon icon="mdi:instagram" className="text-white" />
+      <a href="https://www.instagram.com/vivareengenharia/" rel="noreferrer" target="_blank">
+        <Iconify icon="mdi:instagram" width={24} height={24} className="text-[#99161D] hover:text-[#54595F] transition-all duration-300 hover:-translate-y-2" />
+      </a>
+      <a href="https://www.linkedin.com/company/65671387/" rel="noreferrer" target="_blank">
+        <Iconify icon="mdi:linkedin" width={24} height={24} className="text-[#99161D] hover:text-[#54595F] transition-all duration-300 hover:-translate-y-2" />
       </a>
     </>
   )

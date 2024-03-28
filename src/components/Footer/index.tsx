@@ -5,57 +5,87 @@ import { navLinks } from '../Header/NavLinks'
 import { Container } from '../Partials/Container'
 import { Copyright } from './Copyright'
 import Icon from '../Adapters/Icon'
+import { Icon as Iconify } from '@iconify/react'
 
 export default function Footer() {
   return (
-    <footer className="border-t pt-5">
+    <footer className="bg-[#54595F] border-t pt-5">
       <Container>
-        <div className="flex justify-between flex-wrap gap-10">
-          <div className="w-[320px]">
-            <div className="bg-black w-fit rounded-full flex items-center justify-center p-1 ">
-              <img src="/img/logo.png" alt="Logo" className="w-20" />
+        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-16 lg:gap-20 flex-wrap px-24 py-8">
+          <div>
+            <div className='group flex flex-row gap-1 items-center'>
+              <Iconify
+                icon={'icon-park-solid:local-two'}
+                className='text-white group-hover:text-[#99161d] transition-all duration-300'
+                width={20} height={20}
+              />
+              <strong className='text-white group-hover:text-[#99161d]'>LOCALIZAÇÃO</strong>
             </div>
-            <small className="mt-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-              autem adipisci magnam rerum quae distinctio sequi eius ipsam
-              delectus fugiat harum ratione, dignissimos qui soluta
-              reprehenderit et laboriosam consequuntur alias!
-            </small>
+            <p className="mt-2 text-white text-sm">
+              Rod Augusto Montenegro, 4300.
+              Ed Parque Office. Sala 1011
+              CEP 66635-110
+              Parque Verde - Belém - PA
+            </p>
           </div>
 
-          <div className="flex gap-10 flex-wrap">
-            <div className="flex flex-col w-[320px]">
-              <strong>Encontre nosso escritório</strong>
-              <small>
-                Rodovia Augusto Montenegro, 4300, Parque Office, Torre Norte,
-                Sala 614N Belém - Pará
-              </small>
-              <strong className="mt-4">Horário de atendimento</strong>
-              <small>Segunda à sexta, de 8h às 17h</small>
+          <div>
+            <div className='group flex flex-row gap-1 items-center'>
+              <Iconify
+                icon={'lucide:at-sign'}
+                className='text-white group-hover:text-[#99161d] transition-all duration-300'
+                width={20} height={20}
+              />
+              <strong className='text-white group-hover:text-[#99161d]'>SIGA-NOS</strong>
             </div>
-
-            <div className="flex flex-col gap-5 w-[80px]">
-              {navLinks.map((link) => {
-                return (
-                  <Link href={link.route} key={link.name}>
-                    <strong>{link.name}</strong>
-                  </Link>
-                )
-              })}
-            </div>
-
-            <div className="flex flex-col w-[80px]">
-              <strong>Siga nos</strong>
-              <div className="flex gap-2">
-                <a href="/" rel="noreferrer" target="_blank">
-                  <Icon icon="mdi:facebook" className="text-xl" />
-                </a>
-                <a href="/" rel="noreferrer" target="_blank">
-                  <Icon icon="mdi:instagram" className="text-xl" />
-                </a>
-              </div>
+            <div className='flex flex-row gap-3 mt-2'>
+              <a href="https://web.facebook.com/vivare.engenharia/" rel='noreferrer' target='_blank'>
+                <div className='group border border-white hover:border-[#99161D] transition-all duration-300 rounded-md flex justify-center items-center h-12 w-12'>
+                  <Iconify
+                    icon={'ic:baseline-facebook'}
+                    className='text-white group-hover:text-[#99161d] transition-all duration-300'
+                    width={24} height={24}
+                  />
+                </div>
+              </a>
+              <a href="https://www.instagram.com/vivareengenharia/" rel='noreferrer' target='_blank'>
+                <div className='group border border-white hover:border-[#99161D] transition-all duration-300 rounded-md flex justify-center items-center h-12 w-12'>
+                  <Iconify
+                    icon={'mdi:instagram'}
+                    className='text-white group-hover:text-[#99161d] transition-all duration-300'
+                    width={24} height={24}
+                  />
+                </div>
+              </a>
             </div>
           </div>
+
+          <div className='flex flex-col justify-center'>
+            <div className='group flex flex-row gap-1 items-center'>
+              <Iconify
+                icon={'fa-solid:link'}
+                className='text-white group-hover:text-[#99161d] transition-all duration-300'
+                width={20} height={20}
+              />
+              <strong className='text-white group-hover:text-[#99161d]'>LINKS ÚTEIS</strong>
+            </div>
+            <a href="http://www.sindusconpa.org.br/" className='text-white hover:text-[#99161d] transition-all duration-300' rel="noreferrer" target='_blank'>
+              <p className="mt-2 text-sm">Sinduscon Pará</p>
+            </a>
+
+            <a href="http://www.letsbrain.com.br/" className='text-white hover:text-[#99161d] transition-all duration-300' rel="noreferrer" target='_blank'>
+              <p className="mt-2 text-sm">Brain Inteligência Estratégica</p>
+            </a>
+
+            <a href="http://cbic.org.br/" className='text-white hover:text-[#99161d] transition-all duration-300' rel="noreferrer" target='_blank'>
+              <p className="mt-2 text-sm">CBIC - Câmara Brasileira da Indústria da Construção</p>
+            </a>
+          </div>
+
+          <div className='flex flex-col justify-center'>
+            <img src="/img/logo-white.png" className='h-32 lg:h-24 object-contain' />
+          </div>
+
         </div>
       </Container>
       <Copyright />

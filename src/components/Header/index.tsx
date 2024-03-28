@@ -21,10 +21,8 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full shadow-xl backdrop-blur transition-all ${y > 0 ? 'bg-black/70' : 'bg-black'
-        } `}
+      className={`sticky top-0 z-50 w-full shadow-xl backdrop-blur bg-white`}
     >
-      <TopBar />
       <Container>
         <div className="flex items-center justify-between">
           <Link href="/">
@@ -32,7 +30,7 @@ export function Header() {
               src="/img/logo.png"
               alt=""
               className="py-3 transition-all cursor-pointer"
-              style={{ height: y > 0 ? '3rem' : '4rem' }}
+              style={{ height: y > 0 ? '5rem' : '6rem' }}
             />
           </Link>
           <div className='hidden md:flex items-center gap-3'>

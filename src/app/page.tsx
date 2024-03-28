@@ -1,24 +1,16 @@
-import SwiperHero from "@/components/Swipers/SwiperHero";
+import SectionAboutUsHome from "@/components/Sections/SectionAboutUsHome";
+import SectionContactHome from "@/components/Sections/SectionContactHome";
+import SectionEnterprisesHome from "@/components/Sections/SectionEnterprisesHome";
+import SectionHeroHome from "@/components/Sections/SectionHeroHome";
 
 export default async function Home() {
-  const banners = [
-    {
-      banner: {
-        url: 'https://via.placeholder.com/1920x1080',
-        alt: 'Banner 1',
-      }
-    },
-    {
-      banner: {
-        url: 'https://via.placeholder.com/1920x1080',
-        alt: 'Banner 1',
-      }
-    }
-  ]
 
   return (
     <main>
-      <SwiperHero banners={banners} />
+      <SectionHeroHome />
+      <SectionEnterprisesHome />
+      <SectionAboutUsHome />
+      <SectionContactHome />
     </main>
   );
 }

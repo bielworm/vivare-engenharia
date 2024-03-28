@@ -7,7 +7,8 @@ export default function Icon(props: IconProps) {
         <Iconify
             {...props}
             style={{
-                display: 'inline-block' 
+                display: 'inline-block',
+                color: '#99161d'
             }}
         />
     )

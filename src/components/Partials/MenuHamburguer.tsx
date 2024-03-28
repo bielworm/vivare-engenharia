@@ -32,28 +32,32 @@ export function MenuHamburguer() {
             <img src="/img/logo.png" alt="bredi" />
           </div>
           {navLinks.map((link) => (
-            <div
-              key={link.name}
-              className="text-2xl cursor-pointer text-zinc-900 bg-white p-5 border-b border-brand-yellow"
-              onClick={() => handleRouting(link.route)}
-            >
-              {link.name}
-            </div>
+            link.subroutes ? (
+              link.subroutes.map((sublink) => (
+                <div
+                  key={sublink.label}
+                  className="text-xl cursor-pointer text-zinc-900 bg-white p-5 border-b border-brand-yellow"
+                  onClick={() => handleRouting(sublink.route)}
+                >
+                  Empreendimento - {sublink.label}
+                </div>
+              ))
+            ) : (
+              <div
+                key={link.name}
+                className="text-xl cursor-pointer text-zinc-900 bg-white p-5 border-b border-brand-yellow"
+                onClick={() => handleRouting(link.route)}
+              >
+                {link.name}
+              </div>
+            )
           ))}
           <div className="bg-white py-10">
-            <div className='flex flex-col items-center justify-center pb-5'>
-              <h2>Idioma</h2>
-              <LanguageToggle />
-            </div>
             <p className="text-zinc-900 text-center text-xl">
-              contato@site.com.br
+              contato@vivareengenharia.com.br
             </p>
-            <p className="text-zinc-900 text-center text-xl flex justify-center items-center">
-              <Icon
-                icon="mdi:whatsapp"
-                className="text-brand-yellow mr-2 text-xl"
-              />{' '}
-              (99) 9999-9999
+            <p className="text-zinc-900 text-center text-xl flex justify-center items-center mt-1">
+              (91) 32310-0203
             </p>
           </div>
         </div>
