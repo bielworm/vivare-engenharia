@@ -1,54 +1,10 @@
 'use client'
 import { Container } from "@/components/Partials/Container";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from 'swiper/core';
 import OtherEnterprises from "@/components/Partials/OtherEnterprises";
 import { Icon as Iconify } from '@iconify/react'
 
 export default function Page() {
 
-    const swiperImages = [
-        {
-            id: 1,
-            img: '/img/enterprises/rio-de-janeiro/2.jpg'
-        },
-        {
-            id: 2,
-            img: '/img/enterprises/rio-de-janeiro/3.jpg'
-        },
-        {
-            id: 3,
-            img: '/img/enterprises/rio-de-janeiro/4.jpg'
-        },
-        {
-            id: 4,
-            img: '/img/enterprises/rio-de-janeiro/5.jpg'
-        },
-        {
-            id: 5,
-            img: '/img/enterprises/rio-de-janeiro/6.jpg'
-        },
-        {
-            id: 6,
-            img: '/img/enterprises/rio-de-janeiro/7.jpg'
-        },
-        {
-            id: 7,
-            img: '/img/enterprises/rio-de-janeiro/8.jpg'
-        },
-        {
-            id: 8,
-            img: '/img/enterprises/rio-de-janeiro/10.png'
-        },
-        {
-            id: 9,
-            img: '/img/enterprises/rio-de-janeiro/11.png'
-        },
-        {
-            id: 10,
-            img: '/img/enterprises/rio-de-janeiro/12.jpg'
-        },
-    ]
 
     return (
         <div>
@@ -131,34 +87,6 @@ export default function Page() {
                     </div>
                 </Container>
             </div>
-
-            {/* <div>
-                <Container>
-                    <Swiper
-                        modules={[Navigation, Autoplay]}
-                        autoplay
-                        loop
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 1,
-                                spaceBetween: 0
-                            },
-                            768: {
-                                slidesPerView: 2,
-                                spaceBetween: 0
-                            },
-
-                        }}
-                        navigation={true}
-                    >
-                        {swiperImages.map(image =>
-                            <SwiperSlide key={image.id}>
-                                <img src={image.img} className="h-[80vw] sm:h-[24vw] object-cover" />
-                            </SwiperSlide>
-                        )}
-                    </Swiper>
-                </Container>
-            </div> */}
 
             <div>
                 <Container>
