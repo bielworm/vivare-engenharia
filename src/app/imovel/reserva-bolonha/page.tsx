@@ -8,6 +8,33 @@ import { Icon as Iconify } from '@iconify/react'
 
 export default function Page() {
 
+    const swiperInterna = [
+        {
+            id: 1,
+            img: '/img/enterprises/reserva-bolonha/piscina.jpg'
+        },
+        {
+            id: 2,
+            img: '/img/enterprises/reserva-bolonha/futebol.jpg'
+        },
+        {
+            id: 3,
+            img: '/img/enterprises/reserva-bolonha/churrasqueira.jpg'
+        },
+        {
+            id: 4,
+            img: '/img/enterprises/reserva-bolonha/pet.jpg'
+        },
+        {
+            id: 5,
+            img: '/img/enterprises/reserva-bolonha/salao.jpg'
+        },
+        {
+            id: 6,
+            img: '/img/enterprises/reserva-bolonha/salao_2.jpg'
+        },
+    ]
+
     const swiperImages = [
         {
             id: 1,
@@ -103,6 +130,8 @@ export default function Page() {
                 </div>
                 <img src="/img/enterprises/reserva-bolonha/bg-hero.png" className="relative w-screen object-contain z-10" />
             </div>
+
+
             <div className="mt-12 mb-8">
                 <Container>
                     <div className="grid grid-cols-2 xl:grid-cols-4 gap-8">
@@ -142,31 +171,107 @@ export default function Page() {
                 </Container>
             </div>
 
-            <div>
+            <div className="py-12 bg-[url('/img/bg-contact.webp')]">
                 <Container>
+                    <div className="text-[#004928] text-center">
+                        <h2 className="text-4xl font-bold mb-3">Lazer completo!</h2>
+                        <p>O Bolonha tem vários <strong>ambientes de lazer planejados</strong> para <strong>você, sua familia e amigos.</strong></p>
+                        <p>Nem o seu <strong>pet</strong> vai ficar de fora da brincadeira.</p>
+                    </div>
                     <Swiper
                         modules={[Navigation, Autoplay]}
                         autoplay
                         loop
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 1,
-                                spaceBetween: 0
-                            },
-                            768: {
-                                slidesPerView: 2,
-                                spaceBetween: 0
-                            },
-
-                        }}
+                        className="md:w-[50vw] rounded-sm mt-2"
+                        slidesPerView={1}
                         navigation={true}
                     >
-                        {swiperImages.map(image =>
+                        {swiperInterna.map(image =>
                             <SwiperSlide key={image.id}>
-                                <img src={image.img} className="h-[80vw] sm:h-[24vw] object-cover" />
+                                <img src={image.img} className="object-cover" />
                             </SwiperSlide>
                         )}
                     </Swiper>
+                    <div className="bg-[#A8CF3A] rounded-xl mx-auto md:w-[50vw] mt-8 grid gap-12 grid-cols-2 md:grid-cols-3 px-16 py-8">
+                        <ul className="text-[#004928] text-lg list-disc">
+                            <li>Piscina</li>
+                            <li>Campo de futebol</li>
+                            <li>Playground</li>
+                        </ul>
+                        <ul className="text-[#004928] text-lg list-disc">
+                            <li>Espaço gourmet</li>
+                            <li>Espaço Zen</li>
+                            <li>Pet place</li>
+                        </ul>
+                        <ul className="text-[#004928] text-lg list-disc">
+                            <li>Salão de festas</li>
+                            <li>Salão de jogos</li>
+                        </ul>
+                    </div>
+                </Container>
+            </div>
+
+            <div className="py-12 bg-[#004928]">
+                <Container>
+                    <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-3 md:gap-16">
+
+                        <Swiper
+                            modules={[Navigation, Autoplay]}
+                            autoplay
+                            loop
+                            slidesPerView={1}
+                            navigation={true}
+                            className="w-[90vw] md:w-[32vw]"
+                        >
+                            {swiperImages.map(image =>
+                                <SwiperSlide key={image.id}>
+                                    <img src={image.img} className="object-cover" />
+                                </SwiperSlide>
+                            )}
+                        </Swiper>
+                        <div className="text-white flex flex-col justify-center">
+                            <h2 className="text-3xl font-bold mb-6">O seu espaço</h2>
+
+                            <div className="flex flex-row items-center gap-2 mt-2">
+                                <Iconify
+                                    icon={'material-symbols:check'}
+                                    className='text-white'
+                                    width={24} height={24}
+                                />
+                                <p>85m² de área privativa</p>
+                            </div>
+                            <div className="flex flex-row items-center gap-2 mt-2">
+                                <Iconify
+                                    icon={'material-symbols:check'}
+                                    className='text-white'
+                                    width={24} height={24}
+                                />
+                                <p>01 vaga de garagem</p>
+                            </div>
+                            <div className="flex flex-row items-center gap-2 mt-2">
+                                <Iconify
+                                    icon={'material-symbols:check'}
+                                    className='text-white'
+                                    width={24} height={24}
+                                />
+                                <p>2 quartos sendo 1 suíte reversível</p>
+                            </div>
+
+                            <div className="p-6 mt-3 grid grid-cols-2 md:grid-cols-3">
+                                <ul className="text-[#A8CF3A] text-lg list-disc">
+                                    <li>Sala de Estar</li>
+                                    <li>Lavanderia</li>
+                                </ul>
+                                <ul className="text-[#A8CF3A] text-lg list-disc">
+                                    <li>Sala de Jantar</li>
+                                    <li>Cozinha</li>
+                                </ul>
+                                <ul className="text-[#A8CF3A] text-lg list-disc">
+                                    <li>Quintal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </Container>
             </div>
 
